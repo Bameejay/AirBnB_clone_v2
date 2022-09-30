@@ -1,4 +1,5 @@
- a .tgz archive from the contents of web_static.
+#!/usr/bin/python3
+# Fabfile to generates a .tgz archive from the contents of web_static.
 import os.path
 from datetime import datetime
 from fabric.api import local
@@ -18,4 +19,4 @@ def do_pack():
             return None
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
-    return 
+    return file
